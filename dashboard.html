@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard API</title>
+    <link rel="stylesheet" href="stilo.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+        <div class="usuario">👤</div>
+        <ul class="menu">
+            <li class="activo">DASHBOARD</li>
+            <li>RESUMEN</li>
+            <li>MÉTRICAS</li>
+            <li>REPORTES</li>
+            <li>CONFIGURACIÓN</li>
+        </ul>
+    </aside>
+
+    <main class="main">
+        <div class="topbar">
+            <h3>Tarjetas de KPI</h3>
+            <div class="buscar">
+                <input type="text" placeholder="Buscar">
+            </div>
+        </div>
+
+        <div id="view-dashboard" class="view">
+            <div class="kpis">
+                <div class="kpi"><p>INGRESOS</p><h3 id="ingresos">Cargando...</h3></div>
+                <div class="kpi"><p>EGRESOS</p><h3 id="egresos">Cargando...</h3></div>
+                <div class="kpi"><p>NETO</p><h3 id="neto">Cargando...</h3></div>
+                <div class="kpi"><p>TEMP.</p><h3 id="temperatura">Cargando...</h3></div>
+            </div>
+
+            <div class="contenido">
+                <div class="tabla-box">
+                    <h3>Tabla de Datos</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Ingresos</th>
+                                <th>Egresos</th>
+                                <th>Neto</th>
+                                <th>Ciudad</th>
+                                <th>Temp</th>
+                                <th>Clima</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaDatos"></tbody>
+                    </table>
+
+                </div>
+
+                <div class="grafico-box">
+                    <h3>Gráfico de Tendencias</h3>
+                    <canvas id="graficoLineas"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div id="view-resumen" class="view" style="display:none; padding:20px;">
+            <h3>Resumen Ejecutivo</h3>
+
+            <div class="kpis" style="margin-top: 20px;">
+                <div class="kpi" style="border-bottom-color: #3498db;">
+                    <p>TOTAL INGRESOS</p>
+                    <h3 id="res-ingresos">0</h3>
+                </div>
+
+                <div class="kpi" style="border-bottom-color: #e74c3c;">
+                    <p>TOTAL EGRESOS</p>
+                    <h3 id="res-egresos">0</h3>
+                </div>
+
+                <div class="kpi" style="border-bottom-color: #2ecc71;">
+                    <p>BALANCE NETO</p>
+                    <h3 id="res-neto">0</h3>
+                </div>
+
+                <div class="kpi" style="border-bottom-color: #f1c40f;">
+                    <p>PROMEDIO TEMP.</p>
+                    <h3 id="res-temp">0</h3>
+                </div>
+            </div>
+        </div>
+
+        <div id="view-métricas" class="view" style="display:none; padding:20px;">
+            <h3>Métricas de Rendimiento</h3>
+
+            <div class="contenido" style="height: 350px; margin-top: 20px;">
+
+                <div class="grafico-box">
+                    <h4>Ingresos por Ciudad</h4>
+                    <canvas id="graficoBarras"></canvas>
+                </div>
+
+                <div class="tabla-box">
+                    <h4>Análisis Rápido</h4>
+
+                    <div id="metricas-info" style="color: #94a3b8; padding-top: 20px;">
+                        <p>
+                            Total registros:
+                            <span id="total-reg" style="color: #fff; font-weight: bold;"></span>
+                        </p>
+
+                        <p style="margin-top:10px;">
+                            Ciudad Top:
+                            <span id="top-ciudad" style="color: #fff; font-weight: bold;"></span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="view-reportes" class="view" style="display:none; padding:20px;">
+            <h3>Generar Reportes</h3>
+
+            <button style="padding:10px; cursor:pointer;">
+                Descargar PDF
+            </button>
+        </div>
+
+        <div id="view-configuración" class="view" style="display:none; padding:20px;">
+            <h3>Configuración</h3>
+            <p>Opciones de usuario...</p>
+        </div>
+
+    </main>
+
+</div>
+
+<script src="api.js" defer></script>
+<div class="main-content">
+    
+</div>
+
+<body>
+
+    <div class="sidebar">
+        
+    </div>
+
+
+</body>
+</html>
